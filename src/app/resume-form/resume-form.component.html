@@ -1,17 +1,13 @@
-<div class="container">
-  <h1>Hero Form</h1>
-  <form>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" required>
-    </div>
+<link
+  rel="stylesheet"
+  href="https://rawgit.com/angular/bower-material/v0.9.0-rc2/angular-material.css"
+/>
+<form #dataForm="ngForm" class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi" />
+  </mat-form-field>
 
-    <div class="form-group">
-      <label for="alterEgo">Alter Ego</label>
-      <input type="text" class="form-control" id="alterEgo">
-    </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
-
-  </form>
-</div>
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field>
+</form>
