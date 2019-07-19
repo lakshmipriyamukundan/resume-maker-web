@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponentComponent implements OnInit {
   title = 'ang-todo';
+  dataObj = {};
   constructor(private router: Router) {}
 
   ngOnInit() {}

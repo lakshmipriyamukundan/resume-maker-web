@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { CustomMaterialModule } from './material.module';
+import { ResumeService } from './app.service';
 
 import { AppComponent } from './app.component';
 import { ResumeFormComponent } from './resume-form/resume-form.component';
@@ -26,8 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CustomMaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ResumeService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormsModule, NgForm } from '@angular/forms';
+import { ResumeService } from '../app.service';
+// import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-resume-form',
@@ -7,7 +8,36 @@ import { FormGroup, FormControl, FormsModule, NgForm } from '@angular/forms';
   styleUrls: ['./resume-form.component.css'],
 })
 export class ResumeFormComponent implements OnInit {
-  constructor() {}
+  resumeFields = {
+    name: '',
+    experience: '',
+    email: '',
+    phone: '',
+  };
+  // dataObj = {};
+  constructor(private resumeService: ResumeService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getResumeData();
+  }
+
+  createResume() {
+    console.log(this);
+    this.resumeService.addResume(this.resumeFields).subscribe(
+      (data: any) => {
+        console.log(data);
+      },
+      error => {
+        console.log(error);
+      },
+    );
+  }
+
+  getResumeData() {
+    this.resumeService.getResume().subscribe((data: any) => {
+      console.log(data);
+      this.resumeFields = data.data;
+      console.log(this.resumeFields);
+    });
+  }
 }

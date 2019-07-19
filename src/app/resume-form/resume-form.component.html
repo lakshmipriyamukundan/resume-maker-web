@@ -2,12 +2,84 @@
   rel="stylesheet"
   href="https://rawgit.com/angular/bower-material/v0.9.0-rc2/angular-material.css"
 />
-<form #dataForm="ngForm" class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi" />
-  </mat-form-field>
+<link
+  href="//fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet"
+/>
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
-</form>
+<mat-card class="resume-form">
+  <mat-card-header>
+    <mat-card-title>Create Resume</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form #resumeComp="ngForm" class="my-resume">
+      <table style="width: 100%" cellspacing="10">
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                placeholder="Name"
+                [(ngModel)]="resumeFields.name"
+                name="name"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>Years of Experience</mat-label>
+              <input
+                matInput
+                placeholder="Years of Experience"
+                [(ngModel)]="resumeFields.experience"
+                name="experience"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                placeholder="Email"
+                [(ngModel)]="resumeFields.email"
+                name="email"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <mat-label>Phone Number</mat-label>
+              <input
+                matInput
+                placeholder="Phone Number"
+                [(ngModel)]="resumeFields.phone"
+                name="phone"
+                required
+              />
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-card-actions>
+          <button mat-raised-button (click)="createResume()" color="primary">
+            Create
+          </button>
+        </mat-card-actions>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <!-- Actions go here -->
+  </mat-card-actions>
+</mat-card>
