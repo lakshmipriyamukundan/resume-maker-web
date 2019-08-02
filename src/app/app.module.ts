@@ -13,6 +13,8 @@ import { ResumeFormComponent } from './resume-form/resume-form.component';
 import { HomeComponentComponent } from './home-component/home-component.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResumeTableComponent } from './resume-table/resume-table.component';
+import { MatPaginatorModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ResumeFormComponent,
     HomeComponentComponent,
     LoginComponent,
+    ResumeTableComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatPaginatorModule,
   ],
   providers: [ResumeService],
   bootstrap: [AppComponent],
